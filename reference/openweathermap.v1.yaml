@@ -153,6 +153,58 @@ paths:
                   dateOfBirth: '1996-08-24'
         description: Post the necessary fields for the API to create a new user.
       description: Create a new user.
+  /weather:
+    get:
+      summary: weather
+      tags:
+        - Weather endpoints
+      responses: {}
+      operationId: get-weather
+      description: weather forecast
+      security:
+        - app_id: []
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: zip
+          description: '*zip code*'
+        - schema:
+            type: string
+          in: query
+          name: units
+          description: '*Example: imperial*'
+        - schema:
+            type: string
+          in: query
+          name: q
+          description: '*Example: Lodon*'
+        - schema:
+            type: string
+          in: query
+          name: id
+          description: '*city id*'
+        - schema:
+            type: string
+          in: query
+          name: lat
+          description: '*latitude*'
+        - schema:
+            type: string
+          in: query
+          name: lon
+          description: '*longitude*'
+        - schema:
+            type: string
+          in: query
+          name: lang
+          description: '*language*'
+        - schema:
+            type: string
+          in: query
+          name: mode
+          description: '*Mode*'
+    parameters: []
 components:
   schemas:
     User:
@@ -201,3 +253,12 @@ components:
       name: appid
       type: apiKey
       in: query
+  parameters:
+    lon:
+      name: lon
+      in: query
+      description: '**Longitude**. *Example: 139*. Longitude coordinate of the location of your interest. Must use with `lat`.'
+      schema:
+        type: string      
+tags:
+  - name: Weather endpoints
