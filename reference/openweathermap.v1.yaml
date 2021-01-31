@@ -402,6 +402,7 @@ components:
       name: appid
       type: apiKey
       in: query
+      description: ''
   parameters:
     lon:
       name: lon
