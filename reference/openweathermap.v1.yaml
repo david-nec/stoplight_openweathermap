@@ -279,6 +279,12 @@ paths:
                       description: string
                       icon: string
           headers: {}
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/unauthorized_response'
       operationId: get-weather
       description: 'Access current weather data for any location on Earth including over 200,000 cities! Current weather is frequently updated based on global models and data from more than 40,000 weather stations.'
       security:
@@ -380,6 +386,17 @@ components:
         - lastName
         - email
         - emailVerified
+    unauthorized_response:
+      title: unauthorized_response
+      type: object
+      properties:
+        cod:
+          type: integer
+        message:
+          type: string
+      required:
+        - cod
+        - message
   securitySchemes:
     app_id:
       name: appid
