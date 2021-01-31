@@ -171,8 +171,12 @@ paths:
                     properties:
                       lon:
                         type: number
+                        description: 'City geo location, longitude'
+                        example: 145.77
                       lat:
                         type: number
+                        description: 'City geo location, latitude'
+                        example: -16.92
                   cod:
                     type: number
                   name:
@@ -196,7 +200,84 @@ paths:
                         type: number
                   dt:
                     type: number
-              examples: {}
+                  clouds:
+                    type: object
+                    properties:
+                      all:
+                        type: number
+                  wind:
+                    type: object
+                    properties:
+                      speed:
+                        type: number
+                      deg:
+                        type: number
+                  visibility:
+                    type: number
+                  main:
+                    type: object
+                    properties:
+                      temp:
+                        type: number
+                      feels_like:
+                        type: number
+                      temp_min:
+                        type: number
+                      temp_max:
+                        type: number
+                      pressure:
+                        type: number
+                      humidity:
+                        type: number
+                  base:
+                    type: string
+                  'weather ':
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      main:
+                        type: string
+                      description:
+                        type: string
+                      icon:
+                        type: string
+              examples:
+                example-2:
+                  value:
+                    coord:
+                      lon: 145.77
+                      lat: -16.92
+                    cod: 0
+                    name: string
+                    id: 0
+                    timezone: 0
+                    sys:
+                      type: 0
+                      id: 0
+                      country: string
+                      sunrise: 0
+                      sunset: 0
+                    dt: 0
+                    clouds:
+                      all: 0
+                    wind:
+                      speed: 0
+                      deg: 0
+                    visibility: 0
+                    main:
+                      temp: 0
+                      feels_like: 0
+                      temp_min: 0
+                      temp_max: 0
+                      pressure: 0
+                      humidity: 0
+                    base: string
+                    'weather ':
+                      id: 0
+                      main: string
+                      description: string
+                      icon: string
           headers: {}
       operationId: get-weather
       description: 'Access current weather data for any location on Earth including over 200,000 cities! Current weather is frequently updated based on global models and data from more than 40,000 weather stations.'
