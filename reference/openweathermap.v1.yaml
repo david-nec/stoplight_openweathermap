@@ -243,7 +243,7 @@ paths:
                       icon:
                         type: string
               examples:
-                example-2:
+                Example:
                   value:
                     coord:
                       lon: 145.77
